@@ -1,0 +1,93 @@
+.navbar {
+    background-color: #2d7d9f;
+    position: fixed;
+    top: 10px;
+    width: 100%;
+    z-index: 1000;
+}
+body {
+    padding-top: 100px;
+}
+.selector {
+    text-align: flex;
+    justify-content: space-between;
+    font-style: bold;
+}
+.card {
+    text-align: left;
+    margin-left: 0;
+}
+.card-body {
+    margin-left: 0;
+}
+.sticky-navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+.samping-card {
+    display: inline-block; /* Mengatur agar elemen berada di samping */
+    margin-left: 20px; /*Mengatur jarak dari elemen sebelumnya */
+}
+.all {
+    display: flex;
+}
+.left-align {
+    text-align: left;
+}
+
+.center-align {
+    text-align: center;
+}
+
+.right-align {
+    text-align: right;
+}
+.teks-justify {
+    text-align: justify;
+}
+.scrollable {
+    overflow-x: auto;
+}
+
+.form-signin {
+    max-width: 330px;
+    padding: 1rem;
+}
+
+.form-signin .form-floating:focus-within {
+    z-index: 2;
+}
+
+.form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.form-registration input {
+    border-radius: 0;
+    margin-bottom: -1px;
+}
+
+/* Tampilan hanya pada perangkat seluler */
+@media screen and (max-width: 767px) {
+    /* Sembunyikan kategori ke-5 dan seterusnya */
+    .col-md-2:nth-child(n + 5) {
+        display: none;
+    }
+}
+
+/* Tampilan hanya pada perangkat laptop/desktop */
+@media screen and (min-width: 768px) {
+    /* Sembunyikan tautan "Selengkapnya" */
+    .d-md-none {
+        display: none;
+    }
+}
