@@ -11,11 +11,10 @@ class Order extends Model
 
     protected $guarded = ['id'];
 
-    public function author()
+    public function user()
     {
-        return $this->belongsTo(User::class, 'user_id');
+      return $this->belongsTo(User::class);
     }
-
     public function posts()
       {
         return $this->hasMany(Post::class);

@@ -17,11 +17,6 @@ class User extends Authenticatable
      * @var array
      */
 
-    //  protected $fillable = [
-    //     'name',
-    //     'email',
-    //     'password'
-    //  ];
     protected $guarded = ['id'];
 
      /**
@@ -49,7 +44,12 @@ class User extends Authenticatable
       }
 
       public function profiles()
-    {
-        return $this->hasOne(Profile::class);
-    }
+      {
+          return $this->hasOne(Profile::class);
+      }
+
+      public function addresses()
+      {
+          return $this->hasMany(Address::class);
+      }
 }

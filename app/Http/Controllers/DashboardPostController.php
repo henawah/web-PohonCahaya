@@ -52,6 +52,7 @@ class DashboardPostController extends Controller
             'image' => 'image|file|max:1024',
             'price' => 'required|numeric|min:0',
             'stock' => 'required|integer|min:0',
+            'weight' => 'required|numeric|min:0',
             'body' => 'required'
         ]);
 

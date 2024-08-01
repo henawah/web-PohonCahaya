@@ -1,10 +1,27 @@
+.form-check-input[type="radio"] {
+    width: 1.2em;
+    height: 1.2em;
+    margin-top: 0.3em;
+    border-width: 2px;
+    border-color: #2e2f31;
+}
+
 .navbar {
-    background-color: #2d7d9f;
+    background-color: #077b8a;
     position: fixed;
     top: 10px;
     width: 100%;
     z-index: 1000;
 }
+.border-primary {
+    border-width: 2px !important;
+}
+
+.badge {
+    font-size: 0.9rem;
+    padding: 0.5em;
+}
+
 body {
     padding-top: 100px;
 }
@@ -13,6 +30,15 @@ body {
     justify-content: space-between;
     font-style: bold;
 }
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-container img {
+    border-radius: 15px;
+}
+
 .card {
     text-align: left;
     margin-left: 0;
@@ -49,12 +75,24 @@ body {
 .scrollable {
     overflow-x: auto;
 }
-
 .form-signin {
-    max-width: 330px;
-    padding: 1rem;
+    max-width: 400px;
+    margin: auto;
 }
 
+.btn-google {
+    background-color: #db4a39;
+    color: white;
+}
+
+.btn-google:hover {
+    background-color: #c23321;
+    color: white;
+}
+
+.form-floating {
+    margin-bottom: 1rem;
+}
 .form-signin .form-floating:focus-within {
     z-index: 2;
 }
