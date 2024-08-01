@@ -5,6 +5,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <script type="text/javascript"
+		src="https://app.stg.midtrans.com/snap/snap.js"
+    data-client-key="{{ config('midtrans.clientKey') }}"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-xxx" crossorigin="anonymous" />
+
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" integrity="sha384-dpuaG1suU0eT09tx5plTaGMLBsfDLzUCCUXOY2j/LSvXYuG6Bqs43ALlhIqAJVRb" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet">
@@ -20,11 +26,11 @@
     <div class="container mt-4">
         @yield('containers')
     </div>
-    
+    <script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="{{ config('midtrans.clientKey') }}"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <footer>
-      <div class="card w-200 mb-3 mt-4" style="background-color: #2d7d9f; " >
+      <div class="card w-200 mt-4" style="background-color: #077b8a; " >
         <div class="container" >
           <div class="row " >
               <div class="col-md-4">
@@ -54,8 +60,8 @@
         </div>
       </div>
     </footer>
-    <div class="container center-align">
-      <p>  &copy; 2024 PT.Pohon Cahaya </p>
+    <div class="center-align text-white" style="background-color: #0f1010;"  >
+      <span>  &copy; 2024 PT.Pohon Cahaya </span>
     </div>
   </body>
 </html>

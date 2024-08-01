@@ -1,10 +1,12 @@
 <link href="{{ asset('style.css') }}" rel="stylesheet">
 <nav class="navbar navbar-expand-lg bg-body-primary">
   <div class="container">
-    <a class="navbar-brand" href="/">
-      <img src="{{ asset('assets/logoPC.png') }}" width="70" height="70" alt="Logo PT. Pohon Cahaya">
-    </a>
-    <span class="navbar-brand text-white me-auto">PT. Pohon Cahaya</span>
+    <div class="logo-container">
+      <a class="navbar-brand" href="/">
+        <img src="{{ asset('assets/logoPC.png') }}" width="70" height="70" alt="Logo PT. Pohon Cahaya">
+      </a>
+      <span class="navbar-brand text-white me-auto p-4">PT. Pohon Cahaya</span>
+    </div>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,10 +43,14 @@
         @if (request('author'))
           <input type="hidden" name="author" value="{{ request('author') }}">
         @endif
-        <div class="input-group me-auto">
-          <input type="text" class="form-control" placeholder="Cari Judul Buku, Penulis" name="search" value="{{ request('search') }}">
-          <button class="btn btn-white text-white" type="submit">Search</button>
-        </div>
+        <div class="input-group mb-3 rounded-pill mt-3">
+          <input type="text" class="form-control rounded-pill" placeholder="Cari Judul Buku, Penulis" name="search" value="{{ request('search') }}">
+          <button class="btn  rounded-pill" type="submit">
+              <i class="fas fa-search text-white"></i>
+          </button>
+      </div>
+      
+      
       </form>
 
       <div class="navbar-icons d-flex align-items-center mb-1"  style="width: 15%;">

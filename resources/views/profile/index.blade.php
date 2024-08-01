@@ -1,51 +1,36 @@
 @extends('layouts.main')
 
 @section('containers')
-
-@if (session('success'))
-    <div class="alert alert-success">
-        {{ session('success') }}
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+    <div class="row">
+        <div class="col-lg-3">
+            <div class="list-group">
+                <a href="/profile" class="list-group-item list-group-item-action active">Profil</a>
+                <a href="/profile/address" class="list-group-item list-group-item-action">Alamat</a>
+                <a href="/bank" class="list-group-item list-group-item-action">Bank & Kartu</a>
+            </div>
+        </div>
+        <div class="col-lg-9">
+            <form action="/profile" method="post">
+                @csrf
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="username" name="username" value="{{ old('username', Auth::user()->username) }}">
+                </div>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" value="{{ old('name', Auth::user()->name) }}">
+                </div>
+                <div class="mb-3">
+                    <label for="inputEmail3" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="inputEmail3" name="email" value="{{ old('email', Auth::user()->email) }}">
+                </div>
+                <button type="submit" class="btn btn-primary">Update Profile</button>
+            </form>
+        </div>
     </div>
-@endif
-
-<div class="container text-center mb-4">
-    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
-      <div class="col">
-          <a href="/profile">
-        <div class="p-2 btn"> Profil </div></a>
-      </div>
-      <div class="col">
-          <a href="/profile/address">
-        <div class="p-2 btn"> Alamat </div></a>
-      </div>
-      <div class="col">
-          <a href="/bank">
-        <div class="p-2 btn"> Bank & Kartu </div></a>
-      </div>
-    </div>
-  </div>
-  <div class="col-lg-8">
-    <form action="/profile" method="post">
-        @csrf
-        <div class="row mb-3">
-            <label for="username" class="col-sm-2 col-form-label">Username</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" id="username" name="username" value="{{ old('username', Auth::user()->username) }}">
-            </div>
-        </div>
-        <div class="row mb-3">
-            <label for="name" class="col-sm-2 col-form-label">Name</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" id="name" name="name" value="{{ old('name', Auth::user()->name) }}">
-            </div>
-        </div>
-        <div class="row mb-3">
-            <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
-            <div class="col-sm-10">
-              <input type="email" class="form-control" id="inputEmail3" name="email" value="{{ old('email', Auth::user()->email) }}">
-            </div>
-        </div>
-        <button type="submit" class="btn btn-primary">Update Profile</button>
-    </form>
-  </div>
 @endsection

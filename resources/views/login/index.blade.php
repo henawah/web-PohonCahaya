@@ -18,8 +18,8 @@
       </div>
       @endif
 
-        <main class="form-signin">
-            <h1 class="h3 mb-3 fw-normal text-center">Please Login</h1>
+        <main class="form-signin bg-light">
+            <h1 class="h3 mb-3 fw-normal text-center mt-4">Please Login</h1>
             <form action="/login" method="post">
               @csrf          
               <div class="form-floating">
@@ -40,11 +40,11 @@
               </div>
               <button class="btn btn-primary w-100 py-2" type="submit">Login</button>
             </form>
-            <div class="social-auth-links text-center mt-2 mb-3">
-              <a href="{{ route('google.redirect') }}" class="btn btn-block btn-danger">
-                <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
+            <h6 class="mt-4 mb-4 text-center">--------------OR--------------</h6>
+            <div class="social-auth-links text-center mt-2 mb-3 ">
+              <a href="{{ route('google.redirect') }}" class="btn btn-block w-100 py-2 btn-primary">
+                <i class="bi bi-google"></i> Sign in using Google
               </a>
-
             </div>
             <small class="d-block text-center mt-3">Not register? <a href="/register">Register Now!</a></small>
           </main>

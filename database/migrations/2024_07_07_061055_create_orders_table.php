@@ -15,11 +15,13 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained(); // Relasi ke tabel users
-            $table->foreignId('category_id')->constrained(); // Relasi ke tabel categories (jika ada)
-            $table->decimal('total_price', 10, 2);
-            $table->enum('status', ['pending', 'processed', 'shipped', 'delivered'])->default('pending');
-            $table->string('snap_token')->nullable(); // Token untuk pembayaran (jika menggunakan payment gateway)
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->decimal('total_price', 8, 2);
+            $table->string('status');
+            $table->string('address');
+            $table->integer('qty');
+            $table->string('item_name');
             $table->timestamps();
         });
     }

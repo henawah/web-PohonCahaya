@@ -15,14 +15,13 @@ class CreateAddressesTable extends Migration
     {
         Schema::create('Addresses', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id');
             $table->string('full_name');
             $table->string('phone_number');
             $table->string('email');
             $table->text('address');
             $table->string('province');
             $table->string('city');
-            $table->string('district');
-            $table->string('subdistrict');
             $table->boolean('is_primary')->default(false);
             $table->timestamps();
         });
@@ -37,4 +36,5 @@ class CreateAddressesTable extends Migration
     {
         Schema::dropIfExists('Address');
     }
+    
 }
